@@ -49,7 +49,7 @@ apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7
 
 inform_human 'UPDATING php.ini (cgi.fix_pathinfo=0)' #
 sudo rm /etc/php/7.4/fpm/php.ini
-cp files/php.ini /etc/php/7.4/fpm/php.ini
+sudo p files/php.ini /etc/php/7.4/fpm/php.ini
 
 
 inform_human 'RESTARTING php7.4-fpm'
@@ -59,7 +59,7 @@ sudo systemctl restart php7.4-fpm
 #if i can't find sudo nano /etc/nginx/sites-available/default -->re install nginx
 inform_human 'UPDATING /etc/nginx/sites-available/default'
 sudo rm /etc/nginx/sites-available/default
-cp files/default /etc/nginx/sites-available/default
+sudo cp files/default /etc/nginx/sites-available/default
 
 
 inform_human 'CHECKING FOR ERRORS IN default'
@@ -104,7 +104,7 @@ cd hooks
 
 
 inform_human 'COPYING post-receive file to /var/repo/site.git/hooks/'
-cp ~/la-deployer/files/post-receive /var/repo/site.git/hooks/
+sudo cp ~/la-deployer/files/post-receive /var/repo/site.git/hooks/
 
 
 inform_human 'GIVING post-recive file permissions to excute order to copy files over from git to sever'
